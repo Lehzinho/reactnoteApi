@@ -11,7 +11,7 @@ class UsersController {
 
     const userRepository = new UserRepository();
 
-    const checkUserExists = userRepository.findByEmail(email);
+    const checkUserExists = await userRepository.findByEmail(email);
 
     if (checkUserExists) {
       throw new AppError("Usuário já existe");
